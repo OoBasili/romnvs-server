@@ -7,4 +7,4 @@
 !.yarn/versions
 yarn-debug.log*
 yarn-error.log*
-/build
+/dist

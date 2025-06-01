@@ -8,4 +8,5 @@ RUN adduser --system --uid 1001 user
 USER user
 EXPOSE 5000
 ENV PORT=5000
+RUN yarn build
 CMD yarn start
