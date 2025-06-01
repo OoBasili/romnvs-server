@@ -1,6 +1,6 @@
 import express from 'express';
-import { AppDataSource } from './data-source';
-import { User } from './entity/user';
+import { AppDataSource } from './data-source.js';
+import { User } from './entity/user.js';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -25,7 +25,7 @@ AppDataSource.initialize()
     }
     setData();
   })
-  .catch((err) => {
+  .catch((err: Error) => {
     console.error('Error during Data Source initialization:', err);
   });
 

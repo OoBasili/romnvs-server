@@ -13,14 +13,14 @@ function readSecret(path?: string): string {
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: readSecret(process.env.DB_USERNAME_FILE),
+  host: readSecret(process.env.DB_HOST_FILE),
   port: parseInt(readSecret(process.env.DB_PORT_FILE)),
   username: readSecret(process.env.DB_USERNAME_FILE),
   password: readSecret(process.env.DB_PASSWORD_FILE),
   database: readSecret(process.env.DB_NAME_FILE),
   synchronize: true,
   logging: false,
-  entities: ['src/entity/**/*.ts'],
-  migrations: ['src/migration/**/*.ts'],
+  entities: ['dist/entity/**/*.js'],
+  migrations: ['dist/migration/**/*.js'],
   subscribers: [],
 });
